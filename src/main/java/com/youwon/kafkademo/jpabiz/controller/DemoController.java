@@ -26,7 +26,6 @@ public class DemoController {
      * @return
      */
 	@GetMapping("/testAPI")  
-    @ResponseBody  
 	public String getMethodName(@RequestBody(required = false) String param) {
 
         String message = "";
