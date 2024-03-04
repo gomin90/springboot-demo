@@ -22,4 +22,8 @@ public class DemoService {
         return result;
     }
 
+    public Demo saveData(Demo demo){
+        return demoRepository.save(demo);
+    }
+
 }

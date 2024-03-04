@@ -4,9 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.youwon.kafkademo.jdbcTemplateBiz.domain.Demo;
 import com.youwon.kafkademo.jdbcTemplateBiz.service.DemoService;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @Controller
 public class DemoJdbcTemplateController {
@@ -32,5 +36,11 @@ public class DemoJdbcTemplateController {
         }
         System.out.println(message);
         return new String(message);
+    }
+
+    @PostMapping("/saveData")
+    @ResponseBody
+    public Demo saveData(@RequestBody Demo demo){
+        return demoService.saveData(demo);
     }
 }
