@@ -22,7 +22,6 @@ public class DemoRepository {
     }
 
     public List<Demo> findAll() {
-
         String queryString = "select d.id as id, d.value as value from common.test_table d order by d.id asc";
         return jdbcTemplate.query(queryString, new BeanPropertyRowMapper<>(Demo.class));
     }
